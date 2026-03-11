@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>夢のアーカイブ</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Hiragino Maru Gothic ProN","Yu Gothic",sans-serif;
+}
+
+body{
+background:#ffe6f3;
+height:100vh;
+overflow:hidden;
+color:#ff5ca8;
+}
+
+/* タイトル */
+
+.title{
+position:absolute;
+top:80px;
+left:50%;
+transform:translateX(-50%);
+font-size:50px;
+text-shadow:0 0 10px #ff9ed0;
+}
+
+/* 記録カード */
+
+.container{
+position:absolute;
+top:200px;
+left:50%;
+transform:translateX(-50%);
+display:flex;
+gap:50px;
+}
+
+/* カード */
+
+.card{
+
+width:220px;
+height:220px;
+background:#fff0f7;
+border-radius:20px;
+box-shadow:0 0 20px #ffb6da;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+transition:0.3s;
+
+}
+
+.card:hover{
+
+transform:scale(1.1);
+box-shadow:0 0 40px #ff9ed0;
+
+}
+
+.card h3{
+margin-bottom:10px;
+}
+
+.card p{
+font-size:12px;
+text-align:center;
+padding:0 10px;
+}
+
+/* 薬 */
+
+.pill{
+
+position:absolute;
+width:40px;
+height:20px;
+border-radius:20px;
+background:linear-gradient(90deg,#ff7aa8,#fff);
+animation:float 10s infinite linear;
+
+}
+
+/* 絆創膏 */
+
+.bandage{
+
+position:absolute;
+width:40px;
+height:18px;
+background:#ffe4a8;
+border-radius:6px;
+box-shadow:0 0 0 2px #f0c87a inset;
+animation:float 12s infinite linear;
+
+}
+
+/* 注射器 */
+
+.syringe{
+
+position:absolute;
+width:60px;
+height:6px;
+background:#ddd;
+border-radius:3px;
+animation:float 14s infinite linear;
+
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(100vh) rotate(0deg);
+}
+
+100%{
+transform:translateY(-120vh) rotate(360deg);
+}
+
+}
+
+/* 戻るリンク */
+
+.back{
+
+position:absolute;
+bottom:40px;
+left:50%;
+transform:translateX(-50%);
+font-size:14px;
+color:#ff77b7;
+text-decoration:none;
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="title">夢のアーカイブ</div>
+
+<div class="container">
+
+<div class="card">
+<h3>記録 01</h3>
+<p>
+夢のはじまり<br>
+少女はまだ夢を見ていた
+</p>
+</div>
+
+<div class="card">
+<h3>記録 02</h3>
+<p>
+壊れた日<br>
+世界は灰色になった
+</p>
+</div>
+
+<div class="card">
+<h3>記録 03</h3>
+<p>
+まだ夢を見る<br>
+夢だけは消えない
+</p>
+</div>
+
+</div>
+
+<a class="back" href="index.html">
+← 戻る
+</a>
+
+<script>
+
+/* 薬 */
+
+for(let i=0;i<18;i++){
+
+let pill=document.createElement("div")
+pill.className="pill"
+
+pill.style.left=Math.random()*100+"%"
+pill.style.animationDuration=(6+Math.random()*10)+"s"
+
+document.body.appendChild(pill)
+
+}
+
+/* 絆創膏 */
+
+for(let i=0;i<12;i++){
+
+let band=document.createElement("div")
+band.className="bandage"
+
+band.style.left=Math.random()*100+"%"
+band.style.animationDuration=(8+Math.random()*10)+"s"
+
+document.body.appendChild(band)
+
+}
+
+/* 注射器 */
+
+for(let i=0;i<8;i++){
+
+let syr=document.createElement("div")
+syr.className="syringe"
+
+syr.style.left=Math.random()*100+"%"
+syr.style.animationDuration=(10+Math.random()*12)+"s"
+
+document.body.appendChild(syr)
+
+}
+
+</script>
+
+</body>
+</html>
